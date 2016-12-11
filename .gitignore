@@ -1,0 +1,6 @@
+*.swp
+*.ipynb
+*.pyc
+.venv
+.bookcast.ini
+bookcast.ini
