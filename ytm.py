@@ -74,6 +74,10 @@ parser.add_argument('-l', '--list', action='store_true',
                     help='Only list, not download')
 parser.add_argument('-r', '--reverse', action='store_true',
                     help='Reverse the playlist for processing')
+parser.add_argument('-s', '--start', type=int, default=1,
+                    help='Playlist item to start at')
+parser.add_argument('-e', '--end', type=int, default=None,
+                    help='Playlist item to end at')
 
 args = parser.parse_args()
 logging.basicConfig(level=logging.DEBUG)
@@ -114,6 +118,8 @@ ytdl_opts = {
     'writeinfojson': True,
     'ignoreerrors': True,  # Needed for deleted items in playlist
     'outtmpl': '%(uploader)s/%(title)s-%(id)s.%(ext)s',
+    'playliststart': args.start,
+    'playlistend': args.end,
 }
 
 if args.reverse:
