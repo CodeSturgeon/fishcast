@@ -1,6 +1,8 @@
 *.swp
 *.ipynb
 *.pyc
+.DS_Store
+_*/
 .venv
 .bookcast.ini
 bookcast.ini
