@@ -131,7 +131,9 @@ if args.list:
     with youtube_dl.YoutubeDL(ytdl_opts) as ytdl:
         info = ytdl.extract_info(pl_url)
     for e in info['entries']:
-        output('{playlist_index:03d} [{upload_date}] {title}'.format(**e))
+        known = '*' if e['id'] in known_ids else ' '
+        output(f"{e['playlist_index']:03d} {known} [{e['upload_date']}]"
+               f" {e['title']}")
     sys.exit()
 
 
