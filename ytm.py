@@ -69,10 +69,10 @@ def fg_from_xml(feed_path):
 
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('feed_file', nargs='?', help='Path to the rss xml')
-parser.add_argument('--playlist', help='URL of the playlist')
-parser.add_argument('--list', action='store_true',
+parser.add_argument('-p', '--playlist', help='URL of the playlist')
+parser.add_argument('-l', '--list', action='store_true',
                     help='Only list, not download')
-parser.add_argument('--reverse', action='store_true',
+parser.add_argument('-r', '--reverse', action='store_true',
                     help='Reverse the playlist for processing')
 
 args = parser.parse_args()
