@@ -128,10 +128,11 @@ if args.reverse:
 
 # full run or just a quick peek?
 if args.list:
+    ytdl_opts['simulate'] = True
     with youtube_dl.YoutubeDL(ytdl_opts) as ytdl:
         info = ytdl.extract_info(pl_url)
     for e in info['entries']:
-        known = '*' if e['id'] in known_ids else ' '
+        known = '*' if e is not None and e['id'] in known_ids else ' '
         output(f"{e['playlist_index']:03d} {known} [{e['upload_date']}]"
                f" {e['title']}")
     sys.exit()
