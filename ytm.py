@@ -120,6 +120,7 @@ ytdl_opts = {
     'outtmpl': '%(uploader)s/%(title)s-%(id)s.%(ext)s',
     'playliststart': args.start,
     'playlistend': args.end,
+    'nooverwrites': True,
 }
 
 if args.reverse:

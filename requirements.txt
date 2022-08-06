@@ -1,3 +1,4 @@
 feedgen
 mutagen
 youtube_dl
+yaml
